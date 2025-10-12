@@ -147,7 +147,7 @@ const Header = () => {
           </li>
           <li>
             <Link
-              href="/contact"
+              href="/contacts"
               className="hover:text-sky-400 transition-colors duration-300"
             >
               Contact
@@ -162,7 +162,7 @@ const Header = () => {
           <button className="hover:text-sky-400 transition-colors duration-300">
             <ShoppingCart className="w-5 h-5" />
           </button>
-          <Link href="/login">
+          <Link href="/register"> 
             <button className="border border-white rounded-md px-4 py-2 text-sm font-medium hover:bg-white hover:text-black transition-all duration-300">
               Login/Register
             </button>
@@ -222,7 +222,7 @@ const Header = () => {
               </motion.li>
               <motion.li variants={mobileLinkVariants}>
                 <Link
-                  href="/contact"
+                  href="/contacts"
                   className="text-2xl hover:text-sky-400"
                   onClick={toggleMobileMenu}
                 >
@@ -230,7 +230,7 @@ const Header = () => {
                 </Link>
               </motion.li>
               <motion.li variants={mobileLinkVariants} className="pt-8">
-                <Link href="/login">
+                <Link href="/register">
                   <button
                     className="border border-white rounded-md px-8 py-3 text-lg font-medium hover:bg-white hover:text-black transition-all duration-300"
                     onClick={toggleMobileMenu}

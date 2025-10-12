@@ -67,26 +67,71 @@ const Header = () => {
                   initial="hidden"
                   animate="visible"
                   exit="hidden"
-                  className="absolute left-0 mt-2 w-48 bg-gray-800/90 backdrop-blur-md text-white rounded-md shadow-lg"
+                  className="absolute left-0 mt-2 w-48 bg-white backdrop-blur-md text-black rounded-md shadow-lg"
                 >
                   <Link
-                    href="/products/category1"
+                    href="/products/asian-paints"
                     className="block px-4 py-2 text-sm hover:bg-gray-700"
                   >
-                    Category 1
+                    Asian Paints
                   </Link>
                   <Link
-                    href="/products/category2"
+                    href="/products/jsw-paints"
                     className="block px-4 py-2 text-sm hover:bg-gray-700"
                   >
-                    Category 2
+                    JSW Paints
                   </Link>
                   <Link
-                    href="/products/all"
+                    href="/products/jk-max-paints"
                     className="block px-4 py-2 text-sm hover:bg-gray-700"
                   >
-                    All Products
+                    JK Maxx Paints
                   </Link>
+                  <Link
+                    href="/products/cpvc-pipe"
+                    className="block px-4 py-2 text-sm hover:bg-gray-700"
+                  >
+                    CPVC Pipe and Fittings
+                  </Link>
+                  <Link
+                    href="/products/pvc-pipe"
+                    className="block px-4 py-2 text-sm hover:bg-gray-700"
+                  >
+                    PVC Pipe and Fittings
+                  </Link>
+                  <Link
+                    href="/products/upvc-pipe"
+                    className="block px-4 py-2 text-sm hover:bg-gray-700"
+                  >
+                    UPVC Pipe and Fittings
+                  </Link>
+
+                  <Link
+                    href="/products/bath-fittings"
+                    className="block px-4 py-2 text-sm hover:bg-gray-700"
+                  >
+                    Bath Fittings
+                  </Link>
+                  <Link
+                    href="/products/sanitary-items"
+                    className="block px-4 py-2 text-sm hover:bg-gray-700"
+                  >
+                    Sanitary Items
+                  </Link>
+                  <Link
+                    href="/products/gi-fittings"
+                    className="block px-4 py-2 text-sm hover:bg-gray-700"
+                  >
+                    GI Fittings
+                  </Link>
+                  <Link
+                    href="/products/extra-items"
+                    className="block px-4 py-2 text-sm hover:bg-gray-700"
+                  >
+                    Extra Items
+                  </Link>
+
+
                 </motion.div>
               )}
             </AnimatePresence>

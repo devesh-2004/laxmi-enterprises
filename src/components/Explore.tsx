@@ -1,24 +1,21 @@
 // components/CategorySection.tsx
+"use client"; // This directive is necessary for using Framer Motion.
+
 import Link from "next/link";
-// Corrected the icon imports. 'Pipe' does not exist in lucide-react.
+import { motion } from "framer-motion"; // Import motion for animations
 import {
   Paintbrush,
   PaintBucket,
   Wrench,
-  Droplets, // This is a suitable icon for pipes and fittings
+  Droplets,
   Bath,
   Hammer,
   Package,
   ArrowRight,
-  Construction, // Added another option you can use
+  Construction,
 } from "lucide-react";
 
-// --- EDITABLE CATEGORY DATA ---
-// To change categories, simply edit this array.
-// - name: The text displayed on the card.
-// - href: The URL the card will link to.
-// - Icon: The icon component from lucide-react.
-// - bgColor: The Tailwind CSS gradient classes for the card's background.
+// --- EDITABLE CATEGORY DATA (No changes here) ---
 const categories = [
   {
     name: "Asian Paints",
@@ -51,12 +48,9 @@ const categories = [
     bgColor: "from-blue-700 to-blue-900",
   },
   {
-    // --- THIS IS THE CORRECTED SECTION ---
-    // The previous 'Pipe' icon does not exist. It has been replaced with 'Droplets'.
-    // You could also use 'Wrench' or 'Construction' if you prefer.
     name: "PVC Pipe and Fittings",
     href: "/products/pvc",
-    Icon: Droplets, // <<< FIX APPLIED HERE
+    Icon: Droplets,
     bgColor: "from-slate-700 to-slate-900",
   },
   {
@@ -68,7 +62,7 @@ const categories = [
   {
     name: "Sanitary Items",
     href: "/products/sanitary",
-    Icon: Bath, // Using 'Bath' again as it's relevant for sanitary ware
+    Icon: Bath,
     bgColor: "from-purple-700 to-purple-900",
   },
   {
@@ -87,11 +81,13 @@ const categories = [
 
 const CategorySection = () => {
   return (
-    // Main section container with a dark, classy background color.
-    // py-16 to py-24 adds vertical padding that adjusts for screen size.
-    <section className="bg-slate-900 py-16 sm:py-20 md:py-24">
+    // --- UPDATED: Background changed to a subtle dark gradient ---
+    <section
+      className="bg-gradient-to-b from-gray-900 via-gray-800 to-black 
+     py-16 sm:py-20 md:py-24"
+    >
       <div className="container mx-auto px-4">
-        {/* --- HEADING SECTION --- */}
+        {/* --- HEADING SECTION (No changes here) --- */}
         <div className="text-center mb-12">
           <span className="text-blue-400 font-semibold tracking-widest uppercase">
             EXPLORE
@@ -99,7 +95,6 @@ const CategorySection = () => {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mt-2 mb-4">
             Shop by Category
           </h2>
-          {/* Underline accent */}
           <div className="w-24 h-1 bg-blue-500 mx-auto rounded-full"></div>
           <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
             Explore our wide range of quality paint and plumbing products by
@@ -107,23 +102,40 @@ const CategorySection = () => {
           </p>
         </div>
 
-        {/* --- CATEGORY GRID --- */}
-        {/* This grid is responsive. It shows:
-            - 2 columns on small screens (sm)
-            - 3 columns on medium screens (md)
-            - 4 columns on large screens (lg)
-            - 5 columns on extra-large screens (xl) */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+        {/* --- CATEGORY GRID (No changes to the grid layout itself) --- */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
           {categories.map((category) => (
-            // The Link component from Next.js handles client-side navigation.
-            // The 'group' class is used to control child element styles on hover (e.g., the arrow).
-            <Link href={category.href} key={category.name} className="group">
-              <div
+            <Link
+              href={category.href}
+              key={category.name}
+              className="group"
+              style={{ perspective: 1000 }}
+            >
+              {/* --- UPDATED: The div is now a motion.div for animation --- */}
+              <motion.div
+                // --- Animation for continuous 360-degree rotation ---
+                animate={{ rotateY: 360 }}
+                transition={{
+                  duration: 15, // Slower rotation for a classier feel
+                  repeat: Infinity, // Loop the animation forever
+                  ease: "linear", // Constant speed, no easing
+                }}
+                // --- Animation for when the user hovers over the card ---
+                whileHover={{
+                  rotateY: 0, // Stop the rotation
+                  scale: 1.05, // Make the card slightly larger
+                  transition: {
+                    duration: 0.4, // Make the hover effect quick and responsive
+                    ease: "easeOut",
+                  },
+                }}
+                // --- UPDATED: Classes for hover color change and minimal look ---
                 className={`relative p-6 rounded-xl shadow-lg h-full flex flex-col justify-between
                             bg-gradient-to-br ${category.bgColor}
                             text-white overflow-hidden
-                            transition-all duration-300 ease-in-out
-                            transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/20`}
+                            transition-colors duration-300 ease-in-out
+                            group-hover:bg-gradient-none group-hover:bg-gray-700/50 group-hover:backdrop-blur-sm
+                            hover:shadow-2xl hover:shadow-blue-500/20`}
               >
                 {/* Abstract background shape for decoration */}
                 <div
@@ -144,13 +156,13 @@ const CategorySection = () => {
                 {/* Arrow Icon at the bottom right */}
                 <div className="self-end mt-4">
                   <div
-                    className="p-2 bg-black/30 rounded-full transition-transform duration-300 
+                    className="p-2 bg-black/30 rounded-full transition-all duration-300 
                                   group-hover:translate-x-1 group-hover:bg-blue-500"
                   >
                     <ArrowRight className="w-5 h-5" />
                   </div>
                 </div>
-              </div>
+              </motion.div>
             </Link>
           ))}
         </div>

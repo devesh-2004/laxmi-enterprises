@@ -150,7 +150,7 @@ const Footer = () => {
         {/* --- Bottom Bar with Copyright --- */}
         <div className="border-t border-gray-800 mt-10 pt-6 text-center">
           <p className="text-gray-500 text-sm">
-            © {new Date().getFullYear()} Paint & Plumb Emporium. All rights
+            © {new Date().getFullYear()} Made by Devesh & Manoj | All rights
             reserved.
           </p>
         </div>

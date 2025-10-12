@@ -47,7 +47,7 @@ const ContactPage = () => {
   };
 
   return (
-    <section className="bg-gray-50 py-16 sm:py-20 md:py-24">
+    <section className="bg-slate-300 py-16 sm:py-20 md:py-24">
       <div className="container mx-auto px-4 space-y-16">
         {/* --- MAIN HEADING --- */}
         <div className="text-center">

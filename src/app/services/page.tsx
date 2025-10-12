@@ -47,7 +47,7 @@ const ProfessionalServices = () => {
 
   return (
     // Main section container with a light gray background
-    <section className="bg-gray-50 py-16 sm:py-20 md:py-24">
+    <section className="bg-slate-300 py-16 sm:py-20 md:py-24">
       <div className="container mx-auto px-4 space-y-16">
         {/* --- 1. TOP HEADING SECTION --- */}
         <div className="text-center max-w-3xl mx-auto">

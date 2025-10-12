@@ -160,7 +160,9 @@ const Header = () => {
             <Search className="w-5 h-5" />
           </button>
           <button className="hover:text-sky-400 transition-colors duration-300">
-            <ShoppingCart className="w-5 h-5" />
+            <Link href="/cart">
+              <ShoppingCart className="w-5 h-5" />
+            </Link>
           </button>
           <Link href="/register"> 
             <button className="border border-white rounded-md px-4 py-2 text-sm font-medium hover:bg-white hover:text-black transition-all duration-300">
@@ -227,6 +229,15 @@ const Header = () => {
                   onClick={toggleMobileMenu}
                 >
                   Contact
+                </Link>
+              </motion.li>
+              <motion.li variants={mobileLinkVariants}>
+                <Link
+                  href="/cart"
+                  className="text-2xl hover:text-sky-400"
+                  onClick={toggleMobileMenu}
+                >
+                  Cart
                 </Link>
               </motion.li>
               <motion.li variants={mobileLinkVariants} className="pt-8">
